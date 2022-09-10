@@ -28,7 +28,7 @@ function enterkey() {
 
 // 서버로부터 data를 받았을때
 socket.on("chatting", (data)=>{
-    const{name,msg,time}=data
+    const{name,msg,time}=data // deconstructor, 이거 안하면 밑에 라인에서 LiModel(data.name, data.msg, data.time) 이런식으로 들어가야함
     const item=new LiModel(name, msg, time);
     item.makeLi()
     displaycontainer.scrollTo(0,displaycontainer.scrollHeight) //chatting-list로 하니 안됨 ul태그라 그런듯
